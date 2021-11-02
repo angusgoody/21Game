@@ -5,17 +5,16 @@ FROM python:3.8-slim-buster
 
 RUN pip install pipenv
 
-# Install python dependencies in /.venv
-COPY Pipfile .
-COPY Pipfile.lock .
+# Install application into container
+COPY . /app
+
+WORKDIR /app
+
 
 #Run PIPENV
-RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy
+RUN pipenv install --deploy --system --ignore-pipfile
 
-
-# Install application into container
-COPY . .
 
 #Run the application
-CMD [ "python3", "run.py"]
+CMD [ "python3", "./run.py"]
 
