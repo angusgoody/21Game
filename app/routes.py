@@ -26,6 +26,11 @@ def name():
 	# Simply return a JSON dictionary name: "Angus"
 	return jsonify(name=logic.getName())
 
+# Name route (GET)
+@app.route('/test')
+def test():
+	return render_template('tester.html.j2')
+
 
 # Play route (POST)
 @app.route('/play', methods=['POST'])

@@ -1,0 +1,16 @@
+/**
+ * Custom CSS for Toolbox
+ * 03/11/21
+ */
+
+.tableFixHead{
+    overflow: auto;
+    height: 50vh;
+    min-height: 250px;
+}
+
+.tableFixHead thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
