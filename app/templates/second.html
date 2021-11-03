@@ -1,6 +1,85 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="text-center mt-5">
+
     <h1>The Quarantine queue</h1>
+
+    <!--Bar-->
+    <div class="my-5">
+        <!--Filter / button bar-->
+        <div class="d-flex flex-column flex-sm-row justify-content-between">
+            <div class="d-flex flex-sm-row flex-column">
+                <!--Dropdown-->
+                <div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter messages
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">GCP failure (2)</a>
+                            <a class="dropdown-item" href="#">Inorrect format</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Select all button-->
+                <div class="my-3 my-sm-0 ml-sm-3">
+                    <button type="button" class="btn btn-primary btn-block">Select All</button>
+                </div>
+            </div>
+            <!--Refresh button-->
+            <div>
+                <button type="button" class="btn btn-secondary btn-block">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Info section-->
+
+    <!--List of Messages table -->
+    <div class="table-responsive">
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Select</th>
+                    <th scope="col">TX ID</th>
+                    <th scope="col">Error message</th>
+                    <th scope="col">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="brand"></td>
+                    <td>asdbdnnad</td>
+                    <td>GCP failure</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="brand"></td>
+                    <td>fhbdjnsas</td>
+                    <td>Incorrect format</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="brand"></td>
+                    <td>mnbhgyu</td>
+                    <td>GCP failure</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+    <hr class="mt-4">
+    <!--Bottom button bar-->
+    <div class="d-flex justify-content-center">
+        <div class="mx-2">
+            <button type="button" class="btn btn-danger btn-lg btn-block">Delete selected</button>
+        </div>
+        <div class="mx-2">
+            <button type="button" class="btn btn-success btn-lg btn-block">Retry selected</button>
+        </div>
+    </div>
+
+
+
 </div>
 {% endblock %}
