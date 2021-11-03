@@ -12,12 +12,12 @@ from flask import jsonify, request, render_template
 # Index route
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html.j2')
 
 # Second route
-@app.route('/second')
-def second():
-	return render_template('second.html')
+@app.route('/queue')
+def queue():
+	return render_template('queue.html.j2')
 
 
 # Name route (GET)

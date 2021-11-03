@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+{% extends 'base.html.j2' %}
+{% block title %}Queue{% endblock %}
 {% block content %}
 <div class="text-center mt-5">
 
@@ -17,7 +18,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">GCP failure (2)</a>
-                            <a class="dropdown-item" href="#">Inorrect format</a>
+                            <a class="dropdown-item" href="#">Incorrect format</a>
                         </div>
                     </div>
                 </div>
@@ -36,9 +37,9 @@
     <!--Info section-->
 
     <!--List of Messages table -->
-    <div class="table-responsive">
-        <table class="table table-striped mt-4">
-            <thead>
+    <div class="table-responsive tableFixHead mt-4">
+        <table class="table table-striped">
+            <thead class="bg-dark text-light">
                 <tr>
                     <th scope="col">Select</th>
                     <th scope="col">TX ID</th>
@@ -65,6 +66,15 @@
                     <td>GCP failure</td>
                     <td>1</td>
                 </tr>
+                {% for i in range(50) %}
+                    <tr>
+                        <td><input type="checkbox" name="brand"></td>
+                        <td>mnbhgyu</td>
+                        <td>GCP failure</td>
+                        <td>1</td>
+                    </tr>
+                {% endfor %}
+
             </tbody>
     </table>
     </div>

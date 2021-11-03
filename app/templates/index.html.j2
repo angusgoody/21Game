@@ -1,0 +1,26 @@
+{% extends 'base.html.j2' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!--Top text-->
+    <div class="text-center mt-5">
+        <h1>Welcome to the the toolbox</h1>
+        <p>Please select one of the available tools below</p>
+    </div>
+    <!--Tools-->
+    <hr class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="static/images/icons/queue.svg">
+                  <div class="card-body">
+                    <h5 class="card-title">Queue</h5>
+                    <p class="card-text">Manage items on the SDX Quarantine queue</p>
+                    <a href="/queue" class="btn btn-primary">View</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
