@@ -48,44 +48,61 @@
     </div>
     <!--Table section-->
     <div class="ons-u-mt-m ons-u-mb-l">
-        <!--Table-->
-        <table id="message-table" class="ons-table ">
+        <table class="ons-table ons-table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
           <thead class="ons-table__head">
             <tr class="ons-table__row">
-              <th scope="col" class="ons-table__header ">
-                <span>Select</span>
+              <th scope="col" class="ons-table__header " aria-sort="none">
+                <span class="ons-u-vh">Select</span>
+                <svg id="sort-sprite-select" class="ons-svg-icon " viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                  <path class="ons-topTriangle" d="M6 0l6 7.2H0L6 0zm0 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                  <path class="ons-bottomTriangle" d="M6 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                </svg>
               </th>
-              <th scope="col" class="ons-table__header ">
-                <span>TX ID</span>
+              <th scope="col" class="ons-table__header " aria-sort="none">
+                <span class="ons-u-vh">TXID</span>
+                <svg id="sort-sprite-txid" class="ons-svg-icon " viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                  <path class="ons-topTriangle" d="M6 0l6 7.2H0L6 0zm0 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                  <path class="ons-bottomTriangle" d="M6 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                </svg>
               </th>
-              <th scope="col" class="ons-table__header ">
-                <span>Error message</span>
+              <th scope="col" class="ons-table__header " aria-sort="none">
+                <span class="ons-u-vh">Error message</span>
+                <svg id="sort-sprite-error message" class="ons-svg-icon " viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                  <path class="ons-topTriangle" d="M6 0l6 7.2H0L6 0zm0 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                  <path class="ons-bottomTriangle" d="M6 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                </svg>
               </th>
-              <th scope="col" class="ons-table__header ">
-                <span>Count</span>
+              <th scope="col" class="ons-table__header " aria-sort="none">
+                <span class="ons-u-vh">Count</span>
+                <svg id="sort-sprite-count" class="ons-svg-icon " viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                  <path class="ons-topTriangle" d="M6 0l6 7.2H0L6 0zm0 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                  <path class="ons-bottomTriangle" d="M6 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z" />
+                </svg>
               </th>
             </tr>
           </thead>
           <tbody class="ons-table__body">
-            <tr class="ons-table__row">
-              <td class="ons-table__cell " name="cell-name">
-                <input type="checkbox" name="select">
-              </td>
-              <td class="ons-table__cell ">
-                ADJKJKM-ADADC
-              </td>
-              <td class="ons-table__cell ">
-                GCP Failure
-              </td>
-              <td class="ons-table__cell ">
-                2
-              </td>
-            </tr>
+            {% for i in range(25) %}
+                <tr class="ons-table__row">
+                  <td class="ons-table__cell ">
+                    <label class="checkContainer">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td class="ons-table__cell ">
+                    ADJKJKM-ADADC-{{i}}
+                  </td>
+                  <td class="ons-table__cell ">
+                    GCP Failure
+                  </td>
+                  <td class="ons-table__cell ">
+                    {{i}}
+                  </td>
+                </tr>
+            {% endfor %}
           </tbody>
         </table>
     </div>
-
-    
-
 </div>
 {% endblock %}
