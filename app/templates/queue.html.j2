@@ -1,95 +1,91 @@
 {% extends 'base.html.j2' %}
 {% block title %}Queue{% endblock %}
 {% block content %}
-<div class="text-center mt-5">
 
-    <h1>The Quarantine queue</h1>
 
-    <!--Bar-->
-    <div class="my-5">
-        <!--Filter / button bar-->
-        <div class="d-flex flex-column flex-sm-row justify-content-between">
-            <div class="d-flex flex-sm-row flex-column">
-                <!--Dropdown-->
-                <div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filter messages
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">GCP failure (2)</a>
-                            <a class="dropdown-item" href="#">Incorrect format</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Select all button-->
-                <div class="my-3 my-sm-0 ml-sm-3">
-                    <button type="button" class="btn btn-primary btn-block">Select All</button>
-                </div>
-            </div>
-            <!--Refresh button-->
-            <div>
-                <button type="button" class="btn btn-secondary btn-block">Refresh</button>
-            </div>
+<!--Main page content-->
+<div class="ons-page__container ons-container ons-page__main">
+    <!--Top title-->
+    <div class="ons-grid">
+        <div class="ons-grid__col ons-col-8@m">
+            <h1>The Quarantine queue</h1>
         </div>
     </div>
-
-    <!--Info section-->
-
-    <!--List of Messages table -->
-    <div class="table-responsive tableFixHead mt-4">
-        <table class="table table-striped">
-            <thead class="bg-dark text-light">
-                <tr>
-                    <th scope="col">Select</th>
-                    <th scope="col">TX ID</th>
-                    <th scope="col">Error message</th>
-                    <th scope="col">Count</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox" name="brand"></td>
-                    <td>asdbdnnad</td>
-                    <td>GCP failure</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="brand"></td>
-                    <td>fhbdjnsas</td>
-                    <td>Incorrect format</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="brand"></td>
-                    <td>mnbhgyu</td>
-                    <td>GCP failure</td>
-                    <td>1</td>
-                </tr>
-                {% for i in range(50) %}
-                    <tr>
-                        <td><input type="checkbox" name="brand"></td>
-                        <td>mnbhgyu</td>
-                        <td>GCP failure</td>
-                        <td>1</td>
-                    </tr>
-                {% endfor %}
-
-            </tbody>
-    </table>
-    </div>
-    <hr class="mt-4">
-    <!--Bottom button bar-->
-    <div class="d-flex justify-content-center">
-        <div class="mx-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block">Delete selected</button>
-        </div>
-        <div class="mx-2">
-            <button type="button" class="btn btn-success btn-lg btn-block">Retry selected</button>
+    <!--Dropdown bar-->
+    <div class="ons-u-mt-l ons-u-mb-m">
+        <div class="ons-pl-grid-col">
+            <div class="ons-field">
+              <label class="ons-label  " for="select">Filter by error message</label>
+              <select id="select" name="select" class="ons-input ons-input--select">
+                <option value="" selected disabled>Select an option</option>
+                <optgroup label="All">
+                    <option value="all">View all</option>
+                </optgroup>
+                <optgroup label="Error messages">
+                    <option value="gcp">GCP error (2)</option>
+                    <option value="household-accommodation">Syntax error</option>
+                    <option value="health">Other error</option>
+                    <option value="health">Other error 2</option>
+                </optgroup>
+              </select>
+            </div>  
         </div>
     </div>
+    <!--Buttons bar-->
+    <div class="ons-grid">
+        <!--Left-->
+        <div class="ons-grid__col ons-col-4@m">
+            <button type="button" class="ons-btn ons-btn--small">
+              <span class="ons-btn__inner">Select all</span>
+            </button>
+        </div>
+        <!--Right-->
+        <div class="ons-grid__col ons-col-8@m" style="text-align: right;">
+            <button type="button" class="ons-btn ons-btn--secondary ons-btn--small">
+              <span class="ons-btn__inner">Refresh</span>
+            </button>
+        </div>
+    </div>
+    <!--Table section-->
+    <div class="ons-u-mt-m ons-u-mb-l">
+        <!--Table-->
+        <table id="message-table" class="ons-table ">
+          <thead class="ons-table__head">
+            <tr class="ons-table__row">
+              <th scope="col" class="ons-table__header ">
+                <span>Select</span>
+              </th>
+              <th scope="col" class="ons-table__header ">
+                <span>TX ID</span>
+              </th>
+              <th scope="col" class="ons-table__header ">
+                <span>Error message</span>
+              </th>
+              <th scope="col" class="ons-table__header ">
+                <span>Count</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="ons-table__body">
+            <tr class="ons-table__row">
+              <td class="ons-table__cell " name="cell-name">
+                <input type="checkbox" name="select">
+              </td>
+              <td class="ons-table__cell ">
+                ADJKJKM-ADADC
+              </td>
+              <td class="ons-table__cell ">
+                GCP Failure
+              </td>
+              <td class="ons-table__cell ">
+                2
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
 
-
+    
 
 </div>
 {% endblock %}
