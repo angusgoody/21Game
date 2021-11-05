@@ -26,12 +26,16 @@ body {
     text-align: center;
 }
 
-.tableFixHead{
-    min-height: 250px;
-    height: 50vh;
-    overflow-y: auto;    
-}
 
+/*
+####################################################
+T A B L E
+####################################################
+*/
+
+.tableFixHead{
+    border: 1px solid #E9E8EA;
+}
 .tableFixHead thead{
     inset-block-start: 0; /* "top" */ 
 }
@@ -46,12 +50,23 @@ body {
     z-index: 1;
 }
 
-
 .tablePadding{
     padding: 0px 10px;
 }
 
 
+/*
+####################################################
+T A B L E   F O O T E R
+####################################################
+*/
+
+.footerRow{
+    padding: 10px 0px 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
 
 
 /*
