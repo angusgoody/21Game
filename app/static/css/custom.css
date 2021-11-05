@@ -11,21 +11,41 @@ U T I L I T Y
 ####################################################
 */
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+ 
+#main-content{
+   flex: 1;
+}
+
+
 .text-center{
     text-align: center;
 }
 
 .tableFixHead{
-    overflow: auto;
-    height: 50vh;
     min-height: 250px;
+    height: 50vh;
+    overflow-y: auto;    
 }
 
 .tableFixHead thead{
+    inset-block-start: 0; /* "top" */ 
+}
+
+.tableFixHead tfoot{
+    inset-block-end: 0; /* "bottom" */
+}
+
+.tableFixHead tfoot,thead{
+    background-color: white;
     position: sticky;
-    top: 0;
     z-index: 1;
 }
+
 
 .tablePadding{
     padding: 0px 10px;
