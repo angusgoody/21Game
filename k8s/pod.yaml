@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: twenty-one-angus
+  labels:
+    app: twenty-one-angus
+spec:
+  containers:
+    - image: eu.gcr.io/ons-sdx-training/twenty-one-angus:latest
+      imagePullPolicy: Always
+      name: twenty-one-angus

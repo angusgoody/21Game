@@ -8,7 +8,11 @@ curl http://127.0.0.1:5000/name
 """
 
 from flask import Flask
+
+#Setup app
 app = Flask(__name__)
+app.debug=True #Debug mode on
+
 from app import routes
 
 

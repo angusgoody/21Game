@@ -6,18 +6,13 @@ For defining HTTP routes for the app
 """
 
 from app import app, logic
-from flask import jsonify, request, render_template
+from flask import jsonify, request
 
 
 # Index route
 @app.route('/')
 def index():
-	return render_template('index.html')
-
-# Second route
-@app.route('/second')
-def second():
-	return render_template('second.html')
+	return jsonify(message="Hello world")
 
 
 # Name route (GET)

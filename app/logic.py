@@ -26,5 +26,20 @@ def playMove(playerCount, score):
 	:return: List of consecutive numbers
 	"""
 
-	# For now just return the next two numbers
-	return [score + 1, score + 2]
+	target = 20
+	diff = target - score
+	return consecutive(score,min([1,2,3], key=lambda x:abs(x-diff)))
+
+
+def consecutive(score,n):
+	"""
+	This function will return the "n" next
+	consecutive numbers after the "score"
+	:param score: The current score
+	:param n: number of items after score
+	:return: list of numbers
+	"""
+	li = []
+	for x in range(n):
+		li.append(score+x+1)
+	return li
