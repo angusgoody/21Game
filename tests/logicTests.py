@@ -9,16 +9,16 @@ class PlayTests(unittest.TestCase):
 	"""
 
 	def test1(self):
-		self.assertEqual(logic.playMove(5, 3), [4, 5])
+		self.assertEqual(logic.playMove(3, 3), [4, 5, 6])
 
 	def test2(self):
-		self.assertEqual(logic.playMove(2, 2), [3, 4])
+		self.assertEqual(logic.playMove(3, 18), [19, 20])
 
 	def test3(self):
-		self.assertEqual(logic.playMove(8, 18), [19, 20])
+		self.assertEqual(logic.playMove(3, 20), [21])
 
 	def test4(self):
-		self.assertFalse(sum(logic.playMove(8, 20)) < 20)
+		self.assertEqual(logic.playMove(3, 17), [18,19,20])
 
 
 class NameTests(unittest.TestCase):

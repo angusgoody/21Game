@@ -6,24 +6,21 @@ For defining HTTP routes for the app
 """
 
 from app import app, logic
-from flask import jsonify, request, render_template
+from flask import jsonify, request
 
 
 # Index route
 @app.route('/')
 def index():
-	return render_template('index.html.j2')
+	return jsonify(message="Hello world")
 
-# Second route
-@app.route('/queue')
-def queue():
-	return render_template('queue.html.j2')
 
 # Name route (GET)
 @app.route('/name')
 def name():
 	# Simply return a JSON dictionary name: "Angus"
 	return jsonify(name=logic.getName())
+
 
 # Play route (POST)
 @app.route('/play', methods=['POST'])
